@@ -1,13 +1,13 @@
 output "rds_hostname" {
   description = "RDS instance hostname"
   value       = aws_db_instance.kc_db.address
-  sensitive   = true
+  sensitive   = false
 }
 
 output "rds_port" {
   description = "RDS instance port"
   value       = aws_db_instance.kc_db.port
-  sensitive   = true
+  sensitive   = false
 }
 
 output "rds_username" {
