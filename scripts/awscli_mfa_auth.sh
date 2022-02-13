@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # requires jq
 
-# unset env vars first; otherwise get-session-token call fail due to AWS idiosyncracy
+# unset env vars first; otherwise get-session-token call fails due to AWS idiosyncracy
 unset AWS_ACCESS_KEY_ID
 unset AWS_SECRET_ACCESS_KEY
 unset AWS_SESSION_TOKEN
