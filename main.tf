@@ -25,4 +25,5 @@ module "ec2" {
     public_key_path = var.public_key_path
     bastion_subnet_id = module.networking.bastion_subnet_id
     bastion_sg = module.networking.bastion_sg
+    bastion_temp_sg = module.networking.bastion_temp_sg
 }

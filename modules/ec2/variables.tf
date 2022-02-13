@@ -14,6 +14,10 @@ variable "bastion_sg" {
     type = string
 }
 
+variable "bastion_temp_sg" {
+    type = string
+}
+
 variable "public_key_path" {
     type = string
 }

@@ -9,6 +9,9 @@ output "bastion_subnet_id" {
 output "bastion_sg" {
     value = aws_security_group.allow_ssh.id
 }
+output "bastion_temp_sg" {
+    value = aws_security_group.allow_http.id
+}
 
 output "sql_sg" {
     value = aws_security_group.allow_sql_from_vpc

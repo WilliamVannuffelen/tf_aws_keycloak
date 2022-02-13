@@ -23,7 +23,7 @@ resource "aws_instance" "bastion" {
     associate_public_ip_address = true
     subnet_id                   = var.bastion_subnet_id
     private_ip                  = "10.1.1.5"
-    vpc_security_group_ids      = [var.bastion_sg]
+    vpc_security_group_ids      = [var.bastion_sg, var.bastion_temp_sg]
 
     tags = {
         Environment = var.environment
