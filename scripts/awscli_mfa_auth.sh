@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # requires jq
 
 # unset env vars first; otherwise get-session-token call fails due to AWS idiosyncracy
@@ -10,7 +10,7 @@ unset AWS_SESSION_TOKEN
 # static var as I don't want to be queried for it every time
 MFAARN='arn:aws:iam::850901712561:mfa/wvannuffelen'
 
-read -p "Enter MFA code: " MFACODE
+vared -p "Enter MFA code: " -c MFACODE
 
 # get and set secrets to shell session env vars
 res=$(aws sts get-session-token --serial-number $MFAARN --token-code $MFACODE --duration-seconds 7200)
