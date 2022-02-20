@@ -1,4 +1,4 @@
-# prereq: request certificate; for PoC I used LetsEncrypt with DNS validation
+# prereq: request certificate; for PoC I used LetsEncrypt with DNS TXT validation
 # build customised image with TLS certs baked in
 docker build -t wvdt_keycloak_tls ./build/
 
@@ -11,3 +11,6 @@ aws ecr get-login-password --region eu-west-1 | docker login --username AWS --pa
 # tag and push custom image to ECR
 docker tag wvdt_keycloak_tls:latest 850901712561.dkr.ecr.eu-west-1.amazonaws.com/wvdt_temp:latest
 docker push 850901712561.dkr.ecr.eu-west-1.amazonaws.com/wvdt_temp:latest
+
+docker tag wvdt_keycloak_tls:latest 850901712561.dkr.ecr.eu-west-1.amazonaws.com/wvdtecspoc-dev:latest
+docker push 850901712561.dkr.ecr.eu-west-1.amazonaws.com/wvdtecspoc-dev:latest
